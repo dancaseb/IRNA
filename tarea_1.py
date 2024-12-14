@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # indexes of our linear problem
     X_train = np.array([[1, 5], [3, 3], [5, 2], [3, 9], [6, 9], [8, 7]])
     # expected output, 0 == A, 1 == B
-    y_train = np.array([0, 0, 0, 1, 1, 1])
+    y_train = np.array([0,0,0, 1, 1, 1])
 
     # init perceptron and train with training data
     perceptron = Simple_Perceptron()
