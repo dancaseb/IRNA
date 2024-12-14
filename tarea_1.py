@@ -23,10 +23,11 @@ if __name__ == '__main__':
     # expected output, 0 == A, 1 == B
     y_train = np.array([0,0,0, 1, 1, 1])
 
-    # init perceptron and train with training data
-    perceptron = Simple_Perceptron()
-    perceptron.fit(X_train, y_train)
+    # init perceptron
+    perceptron = Simple_Perceptron(alpha=0.01)
 
+    perceptron.fit(X_train, y_train)
+    plot_seperation_line(perceptron.initial_weights, perceptron.initial_bias, X_train, y_train)
 
     plot_seperation_line(perceptron.weights, perceptron.bias, X_train, y_train)
 

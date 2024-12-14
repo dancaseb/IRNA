@@ -22,6 +22,7 @@ if __name__ == '__main__':
     perceptron = Perceptron_SIGMOID(n_iter=1000, alpha=0.01)
     perceptron.fit(X_train, y_train)
 
+    plot_seperation_line(perceptron.initial_weights, perceptron.initial_bias, X_train, y_train)
 
     plot_seperation_line(perceptron.weights, perceptron.bias, X_train, y_train)
 

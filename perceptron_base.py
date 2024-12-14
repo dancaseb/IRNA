@@ -18,6 +18,8 @@ def plot_seperation_line(weights, bias, X_train, y_train):
     y_points = calculate_y_point(x_points, weights, bias) # calculate the y points
     plt.plot(x_points, y_points)
     plt.scatter(X_train[:,0], X_train[:,1], c=y_train) # plot the 2 class points
+    plt.title(f"Seperation line")
+    plt.xlabel(f"weights: {weights}, bias: {bias}")
     plt.show()
 
 
@@ -30,6 +32,9 @@ class Perceptron:
         self.alpha = alpha
         self.weights = None
         self.bias = None
+        # Save the initial weights and bias for graph plot
+        self.initial_weights = None
+        self.initial_bias = None
 
     def activation_function(self, x):
         """
@@ -43,8 +48,11 @@ class Perceptron:
         Train the perceptron with X_train data and y_train labels.
         Weights and bias are proposed small non zero values.
         """
-        self.weights = np.array([0.01, 0.02])
-        self.bias = 0.1
+        np.random.seed(7)
+        self.initial_weights = np.random.randn(X_train.shape[1])
+        self.initial_bias = np.random.randn()
+        self.weights = self.initial_weights
+        self.bias = self.initial_bias
         
         # learing loop
         for _ in range(self.n_iter):
