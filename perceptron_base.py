@@ -2,12 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def calculate_y_point(x_point, weights, bias):
-    # x*w0 + y*w1 + b = 0 is the seperation line
+    """
+    Calculate the y point of a line given the x point, weights and bias
+    according to this formula x*w_0 + y*w_1 + b = 0
+    """
+    
     return (-weights[0] * x_point - bias) / weights[1]
 
 
 def plot_seperation_line(weights, bias, X_train, y_train):
-    # function to plot the seperation line between two classes
+    """"
+    Function to plot the seperation line between two classes in a graph
+    """
     x_points = np.array([0, 10]) # two points to draw the line
     y_points = calculate_y_point(x_points, weights, bias) # calculate the y points
     plt.plot(x_points, y_points)
@@ -17,13 +23,19 @@ def plot_seperation_line(weights, bias, X_train, y_train):
 
 class Perceptron:
     def __init__(self,n_iter=100, alpha=0.01):
-        # a perceptron has a learning rate and number of iterations, weights and bias set to none
+        """
+        A perceptron has a learning rate alpha and number of iterations. Weights and bias set to none
+        """
         self.n_iter = n_iter
         self.alpha = alpha
         self.weights = None
         self.bias = None
 
     def activation_function(self, x):
+        """
+        The activation function of the perceptron, takes the summed values and returns an output value
+        Define in child classes 
+        """
         pass
 
     def fit(self, X_train, y_train):
