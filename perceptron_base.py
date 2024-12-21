@@ -10,7 +10,7 @@ def calculate_y_point(x_point, weights, bias):
     return (-weights[0] * x_point - bias) / weights[1]
 
 
-def plot_seperation_line(weights, bias, X_train, y_train):
+def plot_seperation_line(weights, bias, X_train, y_train, title="Seperation line"):
     """"
     Function to plot the seperation line between two classes in a graph
     """
@@ -18,7 +18,7 @@ def plot_seperation_line(weights, bias, X_train, y_train):
     y_points = calculate_y_point(x_points, weights, bias) # calculate the y points
     plt.plot(x_points, y_points)
     plt.scatter(X_train[:,0], X_train[:,1], c=y_train) # plot the 2 class points
-    plt.title(f"Seperation line")
+    plt.title(title)
     plt.xlabel(f"weights: {weights}, bias: {bias}")
     plt.show()
 

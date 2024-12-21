@@ -27,9 +27,9 @@ if __name__ == '__main__':
     perceptron = Simple_Perceptron(alpha=0.01)
 
     perceptron.fit(X_train, y_train)
-    plot_seperation_line(perceptron.initial_weights, perceptron.initial_bias, X_train, y_train)
+    plot_seperation_line(perceptron.initial_weights, perceptron.initial_bias, X_train, y_train, title="Initial seperation line")
 
-    plot_seperation_line(perceptron.weights, perceptron.bias, X_train, y_train)
+    plot_seperation_line(perceptron.weights, perceptron.bias, X_train, y_train, title="Final seperation line")
 
 
     # TAREA b) Predict the class of the following points
